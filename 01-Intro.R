@@ -11,9 +11,6 @@ library(tidyverse)
 library(ggplot2)
 library(usmap)
 
-## set working directory here
-setwd("~/Google Drive Harvard/Courses/Gov1347-ElectionAnalytics-2020/Public/01-Intro_09-07-2020")
-
 ####----------------------------------------------------------#
 #### Read and clean pres pop vote ####
 ####----------------------------------------------------------#
