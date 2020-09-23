@@ -11,14 +11,14 @@ library(tidyverse)
 library(ggplot2)
 
 ## set working directory here
-setwd("~")
+setwd("/Users/samlowry/iCloud Drive (Archive) - 1/Documents/rstudio/Enos/1347_labs/02-Econ")
 
 ####----------------------------------------------------------#
 #### The relationship between economy and PV ####
 ####----------------------------------------------------------#
 
-economy_df <- read_csv("econ.csv") 
-popvote_df <- read_csv("popvote_1948-2016.csv") 
+economy_df <- read_csv("data/econ.csv") 
+popvote_df <- read_csv("data/popvote_1948-2016.csv") 
 
 dat <- popvote_df %>% 
   filter(incumbent_party == TRUE) %>%

@@ -11,6 +11,9 @@ library(tidyverse)
 library(ggplot2)
 library(usmap)
 
+setwd("/Users/samlowry/iCloud Drive (Archive) - 1/Documents/rstudio/Enos/1347_labs/01-Intro")
+
+
 ####----------------------------------------------------------#
 #### Read and clean pres pop vote ####
 ####----------------------------------------------------------#
