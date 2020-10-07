@@ -34,6 +34,8 @@ dat_econ_chl <- dat_econ[!dat_econ$incumbent_party,]
 mod_econ_inc <- lm(pv ~ GDP_growth_qt, data = dat_econ_inc)
 mod_econ_chl <- lm(pv ~ GDP_growth_qt, data = dat_econ_chl)
 
+summary(mod_econ_inc)
+
 ## option 2: adjusted polls-only model
 dat_poll     <- dat[!is.na(dat$avg_support),]
 dat_poll_inc <- dat_poll[dat_poll$incumbent_party,]
@@ -161,7 +163,7 @@ outsamp_df[,c("year","econ_winner_correct","poll_winner_correct","plus_winner_co
 #####------------------------------------------------------#
 #####  Predicting 2020 ####
 #####------------------------------------------------------#
-dat_2020_inc <- data.frame(GDP_growth_qt = -0.0949, avg_support = 43.5)
+dat_2020_inc <- data.frame(GDP_growth_qt = -9.49, avg_support = 43.5)
 dat_2020_chl <- data.frame(GDP_growth_qt = -0.0949, avg_support = 50.5)
 
 ## point predictions
@@ -231,6 +233,7 @@ pwt <- colMeans(outsamp_df,na.rm=T)["poll_winner_correct"];
 ewt <- colMeans(outsamp_df, na.rm=T)["econ_winner_correct"];
 (pwt/(pwt+ewt))*predict(mod_poll_inc, dat_2020_inc) + (ewt/(pwt+ewt))*predict(mod_econ_inc, dat_2020_inc)
 (pwt/(pwt+ewt))*predict(mod_poll_chl, dat_2020_chl) + (ewt/(pwt+ewt))*predict(mod_econ_chl, dat_2020_chl)
+
 
 #####------------------------------------------------------#
 #####  Extra: Real-time 2020 Poll Averages ####

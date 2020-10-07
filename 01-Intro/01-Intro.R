@@ -104,7 +104,7 @@ ggsave("PV_national_historical.png", height = 4, width = 8)
 ####----------------------------------------------------------#
 
 ## read in state pop vote
-pvstate_df <- read_csv("popvote_bystate_1948-2016.csv")
+pvstate_df <- read_csv("data/popvote_bystate_1948-2016.csv")
 pvstate_df$full <- pvstate_df$state
 
 ## shapefile of states from `usmap` library
